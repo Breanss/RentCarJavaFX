@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" accessibleHelp="st" prefHeight="552.0" prefWidth="976.0" style="-fx-background-color: #e9e9e9;" styleClass="bn" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.StartClientController">
+   <children>
+      <VBox prefHeight="552.0" prefWidth="228.0">
+         <children>
+            <HBox prefHeight="148.0" prefWidth="210.0" style="-fx-background-color: #1c2026;">
+               <children>
+                  <ImageView fitHeight="118.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pngwing.com.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="380.0" prefWidth="196.0" style="-fx-background-color: #1c2026;">
+               <children>
+                  <VBox prefHeight="399.0" prefWidth="228.0">
+                     <children>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: #494d51;" text="   Home" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionCar" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Samochody" textFill="#f5f5f5">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/car.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionRent" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Wypożycz" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/fajka.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="usersButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionUsers" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Użytkownicy" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/person.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonActionLogout" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text=" Wyloguj" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="175.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/logout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox layoutX="685.0" layoutY="22.0" prefHeight="510.0" prefWidth="270.0" style="-fx-background-color: #f0ecec; -fx-border-color: #000000;">
+         <children>
+            <Pane prefHeight="212.0" prefWidth="228.0" style="-fx-background-color: #1c2026;">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Text fill="WHITE" layoutX="37.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba użytkowników" wrappingWidth="177.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="88.0" fitWidth="84.0" layoutX="14.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/person.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="countUsers" fill="WHITE" layoutX="126.0" layoutY="120.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.0">
+                     <font>
+                        <Font size="72.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+            <Pane prefHeight="212.0" prefWidth="228.0" style="-fx-background-color: #1c2026;">
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" top="40.0" />
+               </VBox.margin>
+               <children>
+                  <Text fill="WHITE" layoutX="30.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liczba samochodów" wrappingWidth="168.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Text>
+                  <ImageView fitHeight="88.0" fitWidth="84.0" layoutX="22.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@img/car.png" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="countCars" fill="WHITE" layoutX="130.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" wrappingWidth="84.0">
+                     <font>
+                        <Font size="72.0" />
+                     </font>
+                  </Text>
+               </children>
+            </Pane>
+         </children>
+      </VBox>
+      <Text fx:id="userLoginText" fill="#323232" layoutX="251.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="403.13671875">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Text fill="#616060" layoutX="251.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="20 lat na polskim rynku" wrappingWidth="202.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#7c7c7c" layoutX="251.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Firma samochodów Car Rent Sp. z o.o. buduje w Polsce największą sieć wypożyczalni samochodów. Obecnie wynająć auto można w 30 miastach, są to m.in.: Bydgoszcz, Częstochowa, Gdańsk, Gdynia, Kalisz, Katowice, Kielce, Koszalin, Kraków, Lubin, Olsztyn, Opole, Poznań, Rzeszów, Szczecin, Toruń, Warszawa, Wrocław, Zielona Góra, Łódź." textAlignment="JUSTIFY" wrappingWidth="403.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#616060" layoutX="251.0" layoutY="326.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Najwyższa jakość" wrappingWidth="202.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#7c7c7c" layoutX="251.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Wypożyczalnia samochodów Car Rent Polska cechuje się wysoką jakością oferowanych samochodów. Wszystkie nasze pojazdy są nowe: najstarszy model ma 2 lata. Ze szczególną starannością dbamy o sprawność techniczną pojazdów, dlatego stale przeprowadzamy przeglądy techniczne w autoryzowanych serwisach." textAlignment="JUSTIFY" wrappingWidth="403.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

@@ -1,0 +1,94 @@
+.buttonStyle{
+    -fx-background-color:  #494d51;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.buttonStyle:hover{
+    -fx-background-color: #383e40;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.buttonLogin{
+    -fx-background-color: #006571;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.buttonLogin:hover{
+    -fx-background-color: #228793;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.buttonMenu{
+    -fx-font-color:red;
+    -fx-background-color: #1c2026;
+}
+
+.buttonMenu:hover {
+    -fx-background-color: #494d51;
+}
+.buttonAdd{
+    -fx-background-color:#67c681 ;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+.buttonAdd:hover{
+    -fx-background-color: #78d792;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.table-view{
+    -fx-border-color:  #494d51;
+    -fx-border-width: 2px;
+    -fx-padding: 0px;
+    -fx-border-radius: 8px;
+    -fx-background-color: transparent;
+}
+.table-view .table-column{
+    -fx-alignment: CENTER;
+}
+.table-view .column-header-background{
+    -fx-background-color:  #494d51;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8px 8px 0px 0px;
+    -fx-background-insets: 0 0 0 0;
+}
+.table-view .column-header, .filter{
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-size: 30px;
+}
+.table-view .column-header .label{
+    -fx-text-fill: #fff;
+}
+
+.deleteButton{
+
+}
+
+.buttonDelete{
+    -fx-background-color:#fd5a5f ;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+.buttonDelete:hover{
+    -fx-background-color: #fe6b6f;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+
+.buttonClear{
+    -fx-background-color:#20B2AA ;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}
+.buttonClear:hover{
+    -fx-background-color: #31c3bb;
+    -fx-font-weight: bold;
+    -fx-font-size: 17px;
+}

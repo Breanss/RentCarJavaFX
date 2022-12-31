@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" accessibleHelp="st" prefHeight="552.0" prefWidth="976.0" style="-fx-background-color: #e9e9e9;" styleClass="bn" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo1.controller.CarController">
+   <children>
+      <VBox prefHeight="552.0" prefWidth="228.0">
+         <children>
+            <HBox prefHeight="148.0" prefWidth="210.0" style="-fx-background-color: #1c2026;">
+               <children>
+                  <ImageView fitHeight="118.0" fitWidth="221.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pngwing.com.png" />
+                     </image>
+                     <HBox.margin>
+                        <Insets top="25.0" />
+                     </HBox.margin>
+                  </ImageView>
+               </children>
+            </HBox>
+            <HBox prefHeight="380.0" prefWidth="196.0" style="-fx-background-color: #1c2026;">
+               <children>
+                  <VBox prefHeight="399.0" prefWidth="228.0">
+                     <children>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionHome" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Home" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/home.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <VBox.margin>
+                              <Insets top="50.0" />
+                           </VBox.margin>
+                        </Button>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="35.0" prefWidth="202.0" style="-fx-background-color: #494d51;" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Samochody" textFill="#f5f5f5">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="22.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/car.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionRent" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Wypożycz" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/fajka.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button fx:id="usersButton" alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#handleButtonActionUsers" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text="   Użytkownicy" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="21.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/person.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#handleButtonActionLogout" prefHeight="35.0" prefWidth="202.0" styleClass="buttonMenu" stylesheets="@css/style.css" text=" Wyloguj" textFill="WHITE">
+                           <VBox.margin>
+                              <Insets bottom="5.0" top="175.0" />
+                           </VBox.margin>
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="21.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@img/logout.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TableView fx:id="table" layoutX="234.0" layoutY="308.0" onMouseClicked="#handleClickActionRecord" prefHeight="157.0" prefWidth="728.0" stylesheets="@css/style.css">
+        <columns>
+          <TableColumn fx:id="lpTableColumn" prefWidth="65.0" text="L.p" />
+          <TableColumn fx:id="brandTableColumn" prefWidth="145.0" text="Marka" />
+            <TableColumn fx:id="modelTableColumn" prefWidth="155.0" text="Model" />
+            <TableColumn fx:id="engineTableColumn" prefWidth="99.0" text="Silnik" />
+            <TableColumn fx:id="avalibleTableColumn" prefWidth="148.0" text="Status" />
+            <TableColumn fx:id="priceTableColumn" prefWidth="114.0" text="Cena" />
+        </columns>
+      </TableView>
+      <Button fx:id="addCarButton" layoutX="410.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleButtonActionAddCar" prefHeight="35.0" prefWidth="86.0" style="-fx-font-weight: bold;" styleClass="buttonAdd" stylesheets="@css/style.css" text="Dodaj" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="deleteCarButton" layoutX="549.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleButtonActionDeleteCar" styleClass="buttonDelete" stylesheets="@css/style.css" text="Usuń" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <Button fx:id="clearButton" layoutX="671.0" layoutY="492.0" mnemonicParsing="false" onAction="#handleButtonActionClear" styleClass="buttonClear" stylesheets="@css/style.css" text="Wyczyść" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
+      <TextField fx:id="brandField" layoutX="248.0" layoutY="33.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="modelField" layoutX="248.0" layoutY="130.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="engineField" layoutX="498.0" layoutY="130.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Text layoutX="250.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Marka">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="248.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Model" wrappingWidth="69.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="499.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Silnik" wrappingWidth="61.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="498.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Status">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="imageCar" fitHeight="176.0" fitWidth="277.0" layoutX="674.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@img/image.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="insertImageButton" layoutX="761.0" layoutY="223.0" mnemonicParsing="false" onAction="#handleButtonActionInsertImage" prefHeight="27.0" prefWidth="85.0" styleClass="buttonStyle" stylesheets="@css/style.css" text="Wstaw" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Button>
+      <Text layoutX="248.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cena" wrappingWidth="69.0">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="priceField" layoutX="248.0" layoutY="228.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </TextField>
+      <Text fx:id="errorMessageBrand" fill="RED" layoutX="248.0" layoutY="83.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="187.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessageModel" fill="RED" layoutX="250.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="187.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessageEngine" fill="RED" layoutX="498.0" layoutY="181.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="187.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="errorMessagePrice" fill="#ff0202" layoutX="248.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="228.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <MenuButton fx:id="avalibleField" layoutX="499.0" layoutY="37.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="162.0" style="-fx-background-color: #fff;" text="Dostępny">
+        <items>
+          <MenuItem mnemonicParsing="false" onAction="#handleActionDostepny" text="Dostępny" />
+          <MenuItem mnemonicParsing="false" onAction="#handleActionNieDostepny" text="Niedostępny" />
+        </items>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </MenuButton>
+      <Text fx:id="errorMessageImage" fill="RED" layoutX="678.0" layoutY="210.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="270.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>
