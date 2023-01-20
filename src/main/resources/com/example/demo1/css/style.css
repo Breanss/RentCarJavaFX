@@ -42,23 +42,23 @@
 }
 
 .table-view{
-    -fx-border-color:  #494d51;
+    -fx-border-color:  #006571;
     -fx-border-width: 2px;
     -fx-padding: 0px;
     -fx-border-radius: 8px;
-    -fx-background-color: transparent;
+    -fx-background-color: #006571;
 }
 .table-view .table-column{
     -fx-alignment: CENTER;
 }
 .table-view .column-header-background{
-    -fx-background-color:  #494d51;
+    -fx-background-color:  #006571;
     -fx-font-weight: bold;
     -fx-background-radius: 8px 8px 0px 0px;
     -fx-background-insets: 0 0 0 0;
 }
 .table-view .column-header, .filter{
-    -fx-background-color: transparent;
+    -fx-background-color: #006571;
     -fx-font-weight: bold;
     -fx-font-size: 14px;
     -fx-size: 30px;

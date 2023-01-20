@@ -50,6 +50,16 @@ public class CarController implements Initializable {
     @FXML
     private Text errorMessageEngine;
     @FXML
+    private Text brandText;
+    @FXML
+    private Text modelText;
+    @FXML
+    private Text priceText;
+    @FXML
+    private Text avalibleText;
+    @FXML
+    private Text engineText;
+    @FXML
     private Text errorMessagePrice;
     @FXML
     private Text errorMessageImage;
@@ -249,7 +259,8 @@ public class CarController implements Initializable {
             else
                 avalibleField.setText("Niedostępny");
             String url = carService.findUrlByBrandModelEngine(car.getBrand(), car.getModel(), car.getEngine());
-            Image image = new Image(url, 500, 300, false, true);
+            File file = new File(url);
+            Image image = new Image(file.toURI().toString(), 450, 200, false, true);
             imageCar.setImage(image);
         }
     }
@@ -260,6 +271,23 @@ public class CarController implements Initializable {
         deleteCarButton.setVisible(false);
         clearButton.setVisible(false);
         addCarButton.setVisible(false);
+        priceField.setVisible(false);
+        modelField.setVisible(false);
+        brandField.setVisible(false);
+        engineField.setVisible(false);
+        avalibleField.setVisible(false);
+        brandText.setVisible(false);
+        modelText.setVisible(false);
+        priceText.setVisible(false);
+        avalibleText.setVisible(false);
+        engineText.setVisible(false);
+
+        imageCar.setFitWidth(500);
+        imageCar.setFitHeight(500);
+        imageCar.setX(-320);
+        imageCar.setY(-20);
+
+
     }
 
     public void errorClear() {
@@ -275,13 +303,10 @@ public class CarController implements Initializable {
     }
 
     private void changeTextListener(TextField text, Text error) {
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
-                if (!text.getText().equals("")) {
-                    text.setStyle("-fx-border-width: 0px;");
-                    error.setText("");
-                }
+        text.textProperty().addListener((observableValue, s, s2) -> {
+            if (!text.getText().equals("")) {
+                text.setStyle("-fx-border-width: 0px;");
+                error.setText("");
             }
         });
     }
