@@ -31,13 +31,11 @@ public class StartClientController implements Initializable {
     private Text userLoginText;
     private final UserService userService;
     private final CarService carService;
-    private final MenuScene menuScene;
     private User user;
 
     public StartClientController() {
         carService = new CarServiceImpl();
         userService = new UserServiceImpl();
-        menuScene = new MenuScene();
     }
 
     public void loginUser(User user) {
@@ -55,22 +53,22 @@ public class StartClientController implements Initializable {
 
     @FXML
     public void handleButtonActionUsers(ActionEvent event) throws IOException {
-        menuScene.usersScene(user, anchorPane);
+        MenuScene.usersScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionRent(ActionEvent event) throws IOException {
-        menuScene.rentScene(user, anchorPane);
+        MenuScene.rentScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionCar(ActionEvent event) throws IOException {
-        menuScene.carsScene(user, anchorPane);
+        MenuScene.carsScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionLogout(ActionEvent event) throws IOException {
-        menuScene.logoutScene(anchorPane);
+        MenuScene.logoutScene(anchorPane);
     }
 
 

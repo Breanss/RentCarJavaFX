@@ -116,14 +116,11 @@ public class RegisterController implements Initializable {
     }
 
     private void changeTextListener(TextField text, Text error) {
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
-                if (!text.getText().equals("")) {
-                    text.setStyle("-fx-border-width: 0px;");
-                    error.setText("");
-                    registerSucces.setText("");
-                }
+        text.textProperty().addListener((observableValue, s, s2) -> {
+            if (!text.getText().equals("")) {
+                text.setStyle("-fx-border-width: 0px;");
+                error.setText("");
+                registerSucces.setText("");
             }
         });
     }

@@ -80,8 +80,6 @@ public class CarController implements Initializable {
     @FXML
     private Button clearButton;
     private Integer id;
-
-    private final MenuScene menuScene;
     private final CarService carService;
     private final AddCarValidate addCarValidate;
     private User user;
@@ -89,7 +87,6 @@ public class CarController implements Initializable {
     public CarController() {
         carService = new CarServiceImpl();
         addCarValidate = new AddCarValidate();
-        menuScene = new MenuScene();
     }
 
     @Override
@@ -174,7 +171,7 @@ public class CarController implements Initializable {
             modelField.setText("");
             priceField.setText("");
             carService.insertCar(car);
-            menuScene.carsScene(user, anchorPane);
+            MenuScene.carsScene(user, anchorPane);
         }
     }
 
@@ -182,7 +179,7 @@ public class CarController implements Initializable {
     public void handleButtonActionDeleteCar(ActionEvent event) throws IOException {
         if (id != null && !brandField.getText().isEmpty()) {
             carService.deleteById(id);
-            menuScene.carsScene(user, anchorPane);
+            MenuScene.carsScene(user, anchorPane);
         }
     }
 
@@ -198,22 +195,22 @@ public class CarController implements Initializable {
 
     @FXML
     public void handleButtonActionUsers(ActionEvent event) throws IOException {
-        menuScene.usersScene(user, anchorPane);
+        MenuScene.usersScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionRent(ActionEvent event) throws IOException {
-        menuScene.rentScene(user, anchorPane);
+        MenuScene.rentScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionHome(ActionEvent event) throws IOException {
-        menuScene.homeScene(user, anchorPane);
+        MenuScene.homeScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionLogout(ActionEvent event) throws IOException {
-        menuScene.logoutScene(anchorPane);
+        MenuScene.logoutScene(anchorPane);
     }
 
     @FXML

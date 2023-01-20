@@ -49,7 +49,6 @@ public class RentController implements Initializable {
     @FXML
     private Text confirmantionPayment;
     private User user;
-    private final MenuScene menuScene;
     private final CarService carService;
     private final RentValidate rentValidate;
     private Float price;
@@ -57,7 +56,6 @@ public class RentController implements Initializable {
     public RentController() {
         rentValidate = new RentValidate();
         carService = new CarServiceImpl();
-        menuScene = new MenuScene();
     }
 
     public void loginUser(User user) {
@@ -79,22 +77,22 @@ public class RentController implements Initializable {
 
     @FXML
     public void handleButtonActionUsers(ActionEvent event) throws IOException {
-        menuScene.usersScene(user, anchorPane);
+        MenuScene.usersScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionHome(ActionEvent event) throws IOException {
-        menuScene.homeScene(user, anchorPane);
+        MenuScene.homeScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionCar(ActionEvent event) throws IOException {
-        menuScene.carsScene(user, anchorPane);
+        MenuScene.carsScene(user, anchorPane);
     }
 
     @FXML
     public void handleButtonActionLogout(ActionEvent event) throws IOException {
-        menuScene.logoutScene(anchorPane);
+        MenuScene.logoutScene(anchorPane);
     }
 
     @FXML

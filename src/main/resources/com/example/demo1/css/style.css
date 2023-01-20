@@ -28,7 +28,7 @@
 }
 
 .buttonMenu:hover {
-    -fx-background-color: #494d51;
+    -fx-background-color: #006571;
 }
 .buttonAdd{
     -fx-background-color:#67c681 ;
@@ -91,4 +91,8 @@
     -fx-background-color: #31c3bb;
     -fx-font-weight: bold;
     -fx-font-size: 17px;
+}
+
+.panels{
+    -fx-background-radius: 20px;
 }

@@ -1,11 +1,10 @@
 package com.example.demo1.controller;
 
+
 import com.example.demo1.helper.NewScene;
 import com.example.demo1.model.User;
 import com.example.demo1.service.UserService;
 import com.example.demo1.service.UserServiceImpl;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -33,7 +32,6 @@ public class LoginController implements Initializable {
     private TextField username;
     @FXML
     private Text errorLoginPassword;
-    private NewScene newScene;
     private final UserService userService;
 
 
@@ -59,7 +57,7 @@ public class LoginController implements Initializable {
                 double y = login_button.getScene().getWindow().getY();
                 login_button.getScene().getWindow().hide();
                 URL fxmlLocation = getClass().getResource("/com/example/demo1/startclient.fxml");
-                newScene = new NewScene(fxmlLocation, x, y, "Start", user);
+                NewScene.newScene(fxmlLocation, x, y, "Rental cars", user);
             } else {
                 errorLoginPassword.setText("Nieprawidłowy login lub hasło!");
             }
@@ -75,12 +73,9 @@ public class LoginController implements Initializable {
     }
 
     private void changeTextListener(TextField text, Text error) {
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
-                if (!text.getText().equals("")) {
-                    error.setText("");
-                }
+        text.textProperty().addListener((observableValue, s, s2) -> {
+            if (!text.getText().equals("")) {
+                error.setText("");
             }
         });
     }
