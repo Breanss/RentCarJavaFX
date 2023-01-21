@@ -67,6 +67,15 @@ public class UsersController implements Initializable {
     }
 
     @FXML
+    private void deleteUser(Event mouseEvent) throws IOException {
+        String email = emailField.getText();
+        if(!email.isEmpty()){
+            userService.deleteUserByEmail(email);
+            MenuScene.usersScene(user, anchorPane);
+        }
+    }
+
+    @FXML
     private void changeToAdmin(Event mouseEvent) throws IOException {
         String email = emailField.getText();
         if (!email.isEmpty()) {

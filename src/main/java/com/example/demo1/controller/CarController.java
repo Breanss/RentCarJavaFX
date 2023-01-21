@@ -6,8 +6,6 @@ import com.example.demo1.model.User;
 import com.example.demo1.service.CarService;
 import com.example.demo1.service.CarServiceImpl;
 import com.example.demo1.validation.AddCarValidate;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -166,16 +164,14 @@ public class CarController implements Initializable {
         car.setBrand(brandField.getText());
         car.setEngine(engineField.getText());
         car.setModel(modelField.getText());
-        car.setImage(imageCar.getImage().getUrl());
+        String[] url = imageCar.getImage().getUrl().split("/");
+        car.setImage("src/main/resources/com/example/demo1/img/"+url[url.length-1]);
 
         int czy = carService.isThere(car.getBrand(), car.getModel(), car.getEngine());
 
         if (!error && czy == 0) {
             car.setPrice(Float.parseFloat(priceField.getText()));
-            if (avalibleField.getText().equals("Dostępny"))
-                car.setAvalible(true);
-            else
-                car.setAvalible(false);
+            car.setAvalible(avalibleField.getText().equals("Dostępny"));
             brandField.setText("");
             engineField.setText("");
             modelField.setText("");
@@ -199,7 +195,8 @@ public class CarController implements Initializable {
         modelField.setText("");
         engineField.setText("");
         priceField.setText("");
-        Image image = new Image("file:/C:/Users/Admin/Desktop/demo1/target/classes/com/example/demo1/img/image.png");
+        File file = new File("src/main/resources/com/example/demo1/img/image.png");
+        Image image = new Image(file.toURI().toString());
         imageCar.setImage(image);
     }
 

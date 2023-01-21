@@ -134,7 +134,15 @@ public class UserRepository {
     public void updateUserToAdmin(String email){
         String sql = "UPDATE user SET admin=1 WHERE email=?";
         try {
-            System.out.println(email);
+            PreparedStatement statement = connection.getConnection().prepareStatement(sql);
+            statement.setString(1, email);
+            statement.execute();
+        }catch (Exception e){e.printStackTrace();}
+    }
+
+    public  void deleteUserByEmail(String email){
+        String sql = "DELETE from user WHERE email=?";
+        try {
             PreparedStatement statement = connection.getConnection().prepareStatement(sql);
             statement.setString(1, email);
             statement.execute();

@@ -1,5 +1,6 @@
 package com.example.demo1.controller;
 
+import com.example.demo1.helper.Encoder;
 import com.example.demo1.model.User;
 import com.example.demo1.service.UserService;
 import com.example.demo1.service.UserServiceImpl;
@@ -92,9 +93,8 @@ public class RegisterController implements Initializable {
             borderError(email);
         }
 
-        Base64.Encoder encoder = Base64.getEncoder();
-        String encoded = encoder.encodeToString(password.getText().getBytes());
-        user.setPassword(encoded);
+        user.setPassword(Encoder.encodePassword(password.getText()));
+
         if (!error) {
             userService.insertUser(user);
             email.setText("");

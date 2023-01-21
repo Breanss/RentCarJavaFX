@@ -6,8 +6,6 @@ import com.example.demo1.model.User;
 import com.example.demo1.service.CarService;
 import com.example.demo1.service.CarServiceImpl;
 import com.example.demo1.validation.RentValidate;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
@@ -130,21 +128,18 @@ public class RentController implements Initializable {
     }
 
     private void changeTextListener(TextField text) {
-        text.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String s2) {
-                boolean error = false;
-                try {
-                    rentValidate.dayNumber(dayField.getText());
-                } catch (Exception e) {
-                    dayField.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
-                    error = true;
-                }
-                if (!error) {
-                    dayField.setStyle("-fx-border-width: 0px;");
-                    float tmp = Float.parseFloat(dayField.getText()) * price;
-                    priceField.setText(Float.toString(tmp));
-                }
+        text.textProperty().addListener((observableValue, s, s2) -> {
+            boolean error = false;
+            try {
+                rentValidate.dayNumber(dayField.getText());
+            } catch (Exception e) {
+                dayField.setStyle("-fx-border-color: red; -fx-border-width: 2px;");
+                error = true;
+            }
+            if (!error) {
+                dayField.setStyle("-fx-border-width: 0px;");
+                float tmp = Float.parseFloat(dayField.getText()) * price;
+                priceField.setText(Float.toString(tmp));
             }
         });
     }

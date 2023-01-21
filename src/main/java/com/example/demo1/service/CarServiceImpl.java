@@ -33,6 +33,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Car findCarByBrandModelEngine(String brand, String model, String engine) {
+        return carRepository.findCarByBrandModelEngine(brand, model, engine);
+    }
+
+    @Override
     public ObservableList<Car> observeFindlCarWhereAvalibleTrue() {
         return carRepository.observeFindlCarWhereAvalibleTrue();
     }

@@ -28,7 +28,7 @@ public abstract class Validators {
     }
 
     public boolean canOnlyContainNumber(String text) {
-        Pattern pattern = Pattern.compile("[0-9]+");
+        Pattern pattern = Pattern.compile("[0-9.]+");
         return !pattern.matcher(text).matches();
     }
 
@@ -50,7 +50,14 @@ public abstract class Validators {
     }
 
     public boolean mustBeOtherImage(String text) {
-        return text.equals("file:/C:/Users/Admin/Desktop/demo1/target/classes/com/example/demo1/img/image.png");
+        String [] tab;
+        try {
+            tab = text.split("/");
+        }catch (ExceptionInInitializerError e){
+            return true;
+        }
+        return !tab[tab.length - 2].equals("img") && tab[tab.length-8].equals("src");
+
     }
 
     public boolean priceMustBeMore0(String text) {

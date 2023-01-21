@@ -9,6 +9,7 @@ public interface CarService {
     String findUrlByBrandModelEngine(String brand, String model, String engine);
     int isThere(String brand, String model, String engine);
     void deleteById(int id);
+    Car findCarByBrandModelEngine(String brand, String model, String engine);
     ObservableList<Car> observeFindlCarWhereAvalibleTrue();
     int countCars();
 }

@@ -125,7 +125,7 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <Button contentDisplay="CENTER" layoutX="488.0" layoutY="400.0" mnemonicParsing="false" onAction="#changeToAdmin" styleClass="buttonStyle" stylesheets="@css/style.css" text="Daj uprawnienia admina" textFill="WHITE">
+      <Button contentDisplay="CENTER" layoutX="281.0" layoutY="403.0" mnemonicParsing="false" onAction="#changeToAdmin" styleClass="buttonStyle" stylesheets="@css/style.css" text="Daj uprawnienia admina" textFill="WHITE">
          <font>
             <Font size="17.0" />
          </font>
@@ -150,5 +150,10 @@
             <Font size="17.0" />
          </font>
       </Text>
+      <Button contentDisplay="CENTER" layoutX="554.0" layoutY="403.0" mnemonicParsing="false" onAction="#deleteUser" styleClass="buttonDelete" stylesheets="@css/style.css" text="Usuń" textFill="WHITE">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

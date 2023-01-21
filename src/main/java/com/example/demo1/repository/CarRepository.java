@@ -110,6 +110,28 @@ public class CarRepository {
         return cars;
     }
 
+    public Car findCarByBrandModelEngine(String brand, String model, String engine){
+        Car car=new Car();
+        String sql = "SELECT * FROM car where brand =? and model=? and engine=?";
+        try {
+            PreparedStatement statement = connection.getConnection().prepareStatement(sql);
+            statement.setString(1, brand);
+            statement.setString(2, model);
+            statement.setString(3, engine);
+            ResultSet resultSet = statement.executeQuery();
+            if(resultSet.next()) {
+                car.setId(resultSet.getInt("id"));
+                car.setBrand(resultSet.getString("brand"));
+                car.setModel(resultSet.getString("model"));
+                car.setEngine(resultSet.getString("engine"));
+                car.setImage(resultSet.getString("image"));
+                car.setPrice(resultSet.getFloat("price"));
+                car.setAvalible(resultSet.getBoolean("avalible"));
+            }
+        }catch(Exception e){e.printStackTrace();}
+        return car;
+    }
+
     public int countCars(){
         String sql = "SELECT count(*)  FROM car";
         int ile=0;

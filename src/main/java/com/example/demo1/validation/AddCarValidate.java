@@ -9,7 +9,7 @@ public class AddCarValidate extends Validators {
             throw new CarValidationException("Marka może zawierać tylko litery!");
         }
         if (maximumLengthIsBad(text, 20)) {
-            throw new CarValidationException("Marka może mieź maximum 20 znaków!");
+            throw new CarValidationException("Marka może mieć maximum 20 znaków!");
         }
     }
 
